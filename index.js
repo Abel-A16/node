@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser")
 app.get("/", function(req, res){
 	res.send("hello abel");
 });
@@ -18,6 +19,12 @@ app.get("/abel/:name", (req, res) => {
 	const name = req.params.name;
 	res.send(name)
 })
+
+app.post("/input", (req, res) => {
+        const name = req.params.name;
+        res.send(name)
+})
+
 app.listen(3000, function(){
         console.log("server started at 3000");
 });
